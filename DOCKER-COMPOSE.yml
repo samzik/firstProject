@@ -16,13 +16,10 @@ services:
     expose:
       - '3333'
 # JAVA Spring
-  Front_WEB:
+  AP_Services:
     build:
       context: .
-      dockerfile: Front_WEB/Front_WEB.Dockerfile
-    image: node:14.16
+      dockerfile: AP_Spring/AP_Spring.Dockerfile
+    image: openjdk:8-jdk-alpine
     ports:
-      - "3500:3000"
-    depends_on:
-      - API_MBTI
-      - API_User
+      - "8080:8080"
